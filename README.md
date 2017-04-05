@@ -1,5 +1,12 @@
-Edge.js: .NET and Node.js in-process [![Build Status](https://travis-ci.org/tjanczuk/edge.svg)](https://travis-ci.org/tjanczuk/edge)
+Edge.js: .NET and Node.js in-process [![Build Status](https://travis-ci.org/agracio/edge.svg)](https://travis-ci.org/agracio/edge)
 ====
+
+---
+**This is a fork of https://github.com/tjanczuk/edge aimed at providing support for Node.js 7.x.**
+
+**NPM package is published to `@agracio/edge`. Use `npm install @agracio/edge` and `require('@agracio/edge')`**
+
+---
 
 **NEW** Edge.js is now on Slack at https://edgejs.slack.com. Join [here](https://webtask.it.auth0.com/api/run/tjanczuk/edgejs-slack-invite). 
  
