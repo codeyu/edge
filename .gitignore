@@ -9,6 +9,8 @@ lib-cov
 *.lock.json
 
 publish
+.vscode
+.idea
 
 pids
 logs
