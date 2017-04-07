@@ -7,13 +7,19 @@ var buildParameters = ['-target:library', '/debug', '-out:' + output, input];
 var mocha = path.resolve(__dirname, '../node_modules/mocha/bin/mocha');
 var fs = require('fs');
 
+if(process.env.IS_TRAVIS_BUILD == 1){
+    console.log('Setting Travis build path');
+    process.env.EDGE_NATIVE = path.resolve(__dirname, '../lib/native/win32/' + process.arch + '/' + process.versions.node + '/' + (process.env.EDGE_USE_CORECLR ? 'edge_coreclr.node' : 'edge_nativeclr.node'));
+    console.log(process.env.EDGE_NATIVE);
+}
+
 if (!process.env.EDGE_USE_CORECLR) {
 	if (process.platform !== 'win32') {
 		buildParameters = buildParameters.concat(['-sdk:4.5']);
 	}
 
-	spawn(process.platform === 'win32' ? 'csc' : 'dmcs', buildParameters, { 
-		stdio: 'inherit' 
+	spawn(process.platform === 'win32' ? 'csc' : 'mcs', buildParameters, {
+		stdio: 'inherit'
 	}).on('close', runOnSuccess);
 } 
 
