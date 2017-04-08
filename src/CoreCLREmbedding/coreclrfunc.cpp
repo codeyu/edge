@@ -473,10 +473,8 @@ v8::Local<v8::Value> CoreClrFunc::MarshalCLRToV8(void* marshalData, int payloadT
 		{
 			v8::Local<v8::String> name = v8::Local<v8::String>::Cast(result->Get(Nan::New<v8::String>("Name").ToLocalChecked()));
 			v8::Local<v8::String> message = v8::Local<v8::String>::Cast(result->Get(Nan::New<v8::String>("Message").ToLocalChecked()));
-            #pragma clang diagnostic push
-            #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-			    result->SetPrototype(v8::Exception::Error(message));
-            #pragma clang diagnostic pop
+
+			result->SetPrototype(v8::Exception::Error(message));
 			result->Set(Nan::New<v8::String>("message").ToLocalChecked(), message);
 			result->Set(Nan::New<v8::String>("name").ToLocalChecked(), name);
 		}
