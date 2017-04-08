@@ -12,7 +12,7 @@ if (!process.env.EDGE_USE_CORECLR) {
 		buildParameters = buildParameters.concat(['-sdk:4.5']);
 	}
 
-	spawn(process.platform === 'win32' ? 'csc' : 'dmcs', buildParameters, {
+	spawn(process.platform === 'win32' ? 'csc' : 'mcs', buildParameters, {
 		stdio: 'inherit'
 	}).on('close', runOnSuccess);
 } 
