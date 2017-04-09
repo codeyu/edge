@@ -15,8 +15,3 @@ install:
  - sudo apt-get update
  - sudo apt-get install mono-devel
  - npm install
-
-script:
- - gcc -v
- - mono -V
- - npm test
