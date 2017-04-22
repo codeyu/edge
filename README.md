@@ -1221,7 +1221,7 @@ To build one of the versions of Node.js officially released by [Node.js](http://
 
 ```
 cd tools
-build.bat release 6.4.0
+build.bat release 6.9.2
 ```
 
 Note: the Node.js version number you provide must be version number corresponding to one of the subdirectories of http://nodejs.org/dist. The command will build both x32 and x64 architectures (assuming you use x64 machine). The command will also copy the edge\_\*.node executables to appropriate locations under lib\native directory where they are looked up from at runtime. The `npm install` step copies the C standard library shared DLL to the location of the edge\_\*.node files for the component to be ready to go.
